@@ -236,6 +236,13 @@ class CarInterface(CarInterfaceBase):
       ret.centerToFront = ret.wheelbase * 0.4
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
 
+    elif candidate == CAR.TRAX:
+      ret.mass = 1365 + STD_CARGO_KG
+      ret.wheelbase = 2.70
+      ret.steerRatio = 16.4
+      ret.centerToFront = ret.wheelbase * 0.4
+      CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
+
     if ret.enableGasInterceptor:
       ret.minEnableSpeed = -1
       ret.pcmCruise = False
